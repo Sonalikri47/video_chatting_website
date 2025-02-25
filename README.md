@@ -1,6 +1,9 @@
 # 🎥 Django-Based Video Chatting Website
 
+
 A real-time **video chatting web application** built using the **Django** framework and integrated with the **Agora Video Web SDK**. This project allows seamless audio and video communication between users, offering a smooth and user-friendly experience.
+
+![Lobby page](https://github.com/Sonalikri47/video_chatting_website/blob/main/Video%20chatting%20website/lobby%20page.jpg)
 
 ---
 
