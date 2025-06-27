@@ -1,0 +1,1 @@
+web: gunicorn mychat2.wsgi

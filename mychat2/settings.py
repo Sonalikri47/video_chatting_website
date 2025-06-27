@@ -8,7 +8,12 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
+
+
 """
+from dotenv import load_dotenv
+load_dotenv()
+
 import os
 from pathlib import Path
 
@@ -28,10 +33,10 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-default-key")
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['videochat-app.up.railway.app']
+# ALLOWED_HOSTS = ['videochat-app.up.railway.app']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','videochat-app.up.railway.app']
 
-
-
+CSRF_TRUSTED_ORIGINS=['https://videochat-app.up.railway.app']
 # Application definition
 
 INSTALLED_APPS = [
@@ -80,11 +85,21 @@ WSGI_APPLICATION = "mychat2.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 import dj_database_url
 
+# DATABASES = {
+#      'default': dj_database_url.config(
+#          default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+#     )
+# }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get("DATABASE_URL")
+#     )
+# }
 DATABASES = {
-    'default': dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
-    )
+    'default': dj_database_url.config()
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
